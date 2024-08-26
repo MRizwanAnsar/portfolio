@@ -502,7 +502,11 @@ a:focus {
   height: 100%;
   object-fit: cover;
 }
-
+.border-about-seaction{
+  background-color: #e62d45;
+  margin-bottom: 100px;
+  height: 100px;
+}
 .about .about-content {
   padding: 0 60px;
 }

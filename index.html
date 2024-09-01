@@ -26,6 +26,7 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
+
     <!-- Nav Bar Start -->
     <div class="navbar navbar-expand-lg bg-light navbar-light">
         <div class="container-fluid">
@@ -293,6 +294,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- Job Experience End -->
 
 
@@ -341,7 +344,7 @@
                         </div>
                         <div class="portfolio-text">
                             <h3>PrinterOn Print</h3>
-                            <a class="btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">+</a>
+                            <a class="btn" onclick="openNav()" href="img/portfolio-1.jpg" data-lightbox="portfolio">+</a>
                         </div>
                     </div>
                 </div>
@@ -405,7 +408,16 @@
     </div>
     <!-- Portfolio End -->
 
+    <!-- Side menu start -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
 
+    <!-- Side menu end -->
     <!-- Banner Start -->
     <div class="banner wow zoomIn" data-wow-delay="0.1s">
         <div class="container">
@@ -829,3 +841,12 @@
 </body>
 
 </html>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "50%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>

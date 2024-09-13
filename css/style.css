@@ -1634,3 +1634,45 @@ a:focus {
     padding: 0 5px;
   }
 }
+
+.project-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+.tech-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Adjust padding as needed */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Glow effect on hover */
+.tech-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* White background with transparency */
+  border-radius: 50%; /* Make it a circle if the icons are circular */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* White glow */
+  z-index: -1; /* Place behind the icon */
+}
+
+/* Ensure icon color and text-shadow */
+.tech-item i {
+  color: #fff; /* Icon color */
+  font-size: 40px; /* Adjust size as needed */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Optional: Glow effect on icon */
+.tech-item i:hover {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+    /* Inner white glow */ 0 0 10px rgba(255, 255, 255, 0.6),
+    /* Outer white glow */ 0 0 15px rgba(255, 255, 255, 0.4); /* Further outer glow */
+}

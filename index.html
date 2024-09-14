@@ -897,7 +897,7 @@
 
             <div class="project-title pb-4" > ${contentData.title}</div>
             <div class="flex flex-row space-x-10" >
-                <div class="flex flex-col w-full md:w-min-[400px] text-justify space-y-5">
+                <div class="flex flex-col min-w-[400px] max-w-[400px] text-justify space-y-5">
                     <div class="flex flex-col">
                         <div class="text-white font-bold" >Role</div>
                         <div class="pl-1 text-white">${contentData.role}</div>
@@ -1012,6 +1012,28 @@
             cover: "cover.jpg",
             coverIcons: ["fa-android", "fa-apple"],
             maxImages: 10,
+            imagesExtension: "jpeg",
+            imagesDirection: 'vertical',
+            sectionClass: "filter-2",
+            delay: "0.0s",
+
+        },
+        {
+            title: "PayThePoolMan",
+            role: "I work as Ionic/Angular mobile developer.",
+            description: "Paythepoolman Plus is a cutting-edge mobile application designed to streamline workforce management for businesses while they're on the move. Built with Ionic and Angular, this app is packed with features that allow you to effectively plan and track routes to enhance the quality of service. With Paythepoolman Plus, you can easily manage and monitor your workforce, assign tasks, track progress, and ensure timely completion of work orders",
+            stack: [
+                { title: "Ionic", icon: "devicon-ionic-original colored" },
+                { title: "Capacitor", icon: "devicon-capacitor-plain colored" },
+                { title: "Angular", icon: "devicon-angularjs-plain colored" },
+                { title: "Typescript", icon: "devicon-typescript-plain colored" },
+                { title: "Android ", icon: "devicon-android-plain colored" },
+                { title: "IOS", icon: "devicon-apple-original colored" }
+            ],
+            basePath: "img/portfolio/gallery/pay-the-poolman/",
+            cover: "cover.jpg",
+            coverIcons: ["fa-android", "fa-apple"],
+            maxImages: 32,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
             sectionClass: "filter-2",

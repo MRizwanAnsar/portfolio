@@ -335,51 +335,14 @@
                 <div class="col-12">
                     <ul id="portfolio-filter">
                         <li data-filter="*" class="filter-active">All</li>
-                        <li data-filter=".filter-1">Web Design</li>
-                        <li data-filter=".filter-2">Mobile Apps</li>
-                        <li data-filter=".filter-3">Game Dev</li>
+                        <li data-filter=".filter-1">Mobile Apps</li>
+                        <li data-filter=".filter-2">Web Design</li>
+                        <!-- <li data-filter=".filter-3">Game Dev</li> -->
                     </ul>
                 </div>
             </div>
 
             <div id="profile-project-list">
-
-                <!-- <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" onclick="openNav()" data-wow-delay="0.0s">
-                    <div class="portfolio-wrap">
-                        <div class="portfolio-img">
-                            <img src="img/portfolio-1.jpg" alt="Image">
-                        </div>
-                        <div class="portfolio-text">
-                            <h3>PrinterOn Print</h3>
-                            <a class="btn">
-                                <i class="fab fab fa-android"></i>
-                                <i class="fab fab fa-apple"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="portfolio-wrap">
-                        <div class="portfolio-img">
-                            <img src="img/portfolio-2.jpg" alt="Image">
-                        </div>
-                        <div class="portfolio-text">
-                            <h3>EprintIt SaaS2</h3>
-                            <a class="btn" href="img/portfolio-2.jpg" data-lightbox="portfolio">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="portfolio-wrap">
-                        <div class="portfolio-img">
-                            <img src="img/portfolio-3.jpg" alt="Image">
-                        </div>
-                        <div class="portfolio-text">
-                            <h3>Voxly</h3>
-                            <a class="btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">+</a>
-                        </div>
-                    </div>
-                </div> -->
 
             </div>
         </div>
@@ -817,7 +780,7 @@
                 </div>
             </div>
             <div class="container copyright">
-                <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved |
+                <p>&copy;
 
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                     Designed By <a href="https://htmlcodex.com">HTML Codex</a>
@@ -969,8 +932,8 @@
             maxImages: 10,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2 ",
-            delay: "0.0s",
+            sectionClass: "filter-1",
+            delay: "0.1s",
 
         },
 
@@ -992,7 +955,7 @@
             maxImages: 5,
             imagesExtension: "png",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-1",
             delay: "0.0s",
 
         }, {
@@ -1013,7 +976,7 @@
             maxImages: 11,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-1",
             delay: "0.0s",
 
         },
@@ -1037,7 +1000,7 @@
             maxImages: 6,
             imagesExtension: "jpg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-1",
             delay: "0.0s",
 
         },
@@ -1060,7 +1023,7 @@
             maxImages: 32,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-1",
             delay: "0.0s",
 
         },
@@ -1126,7 +1089,7 @@
             maxImages: 7,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-1",
             delay: "0.0s",
 
         },
@@ -1147,7 +1110,7 @@
             maxImages: 10,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-1",
             delay: "0.0s",
 
         },
@@ -1168,7 +1131,7 @@
             maxImages: 5,
             imagesExtension: "jpg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-1",
             delay: "0.0s",
 
         },
@@ -1178,7 +1141,7 @@
 
     profileProjectList.classList.add('row');
     profileProjectList.classList.add('portfolio-container');
-    profileProjectList.innerHTML = portfolioData.map((item, index) => `
+    const data = portfolioData.map((item, index) => `
                 <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item ${item.sectionClass} wow fadeInUp" onclick="openNav(${index})" data-wow-delay="${item.delay}">
                     <div class="portfolio-wrap">
                         <div class="portfolio-img">
@@ -1193,5 +1156,7 @@
                     </div>
                 </div>
     `).join('');
+
+    profileProjectList.innerHTML = (data)
 
 </script>

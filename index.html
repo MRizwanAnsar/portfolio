@@ -205,8 +205,8 @@
                     <div class="service-item">
                         <div class="service-icon ">
 
-                            <i class="fab fa-android"></i>
-                            <i class="fab fa-apple"></i>
+                            <i class="fab fab fa-android"></i>
+                            <i class="fab fab fa-apple"></i>
                         </div>
                         <div class="service-text">
                             <h3>Play/App Store Deployment</h3>
@@ -352,8 +352,8 @@
                         <div class="portfolio-text">
                             <h3>PrinterOn Print</h3>
                             <a class="btn">
-                                <i class="fab fa-android"></i>
-                                <i class="fab fa-apple"></i>
+                                <i class="fab fab fa-android"></i>
+                                <i class="fab fab fa-apple"></i>
                             </a>
                         </div>
                     </div>
@@ -965,14 +965,15 @@
             ],
             basePath: "img/portfolio/gallery/eprint-it/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 10,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
-            sectionClass: "filter-2",
+            sectionClass: "filter-2 ",
             delay: "0.0s",
 
         },
+
 
         {
             title: "DealersBook",
@@ -987,7 +988,7 @@
             ],
             basePath: "img/portfolio/gallery/dealersbook/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 5,
             imagesExtension: "png",
             imagesDirection: 'vertical',
@@ -1000,7 +1001,7 @@
             description: "PrinterOn simplifies finding and printing documents to any PrinterOn-supported Enterprise or Public Printing Location, all within a user-friendly application.",
             stack: [
                 { title: "Ionic", icon: "devicon-ionic-original colored" },
-                { title: "Capacitor", icon: "devicon-capacitor-plairawn colored" },
+                { title: "Capacitor", icon: "devicon-capacitor-plain colored" },
                 { title: "Angular", icon: "devicon-angularjs-plain colored" },
                 { title: "Typescript", icon: "devicon-typescript-plain colored" },
                 { title: "Android ", icon: "devicon-android-plain colored" },
@@ -1008,7 +1009,7 @@
             ],
             basePath: "img/portfolio/gallery/printer-on-print/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 11,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
@@ -1032,7 +1033,7 @@
             ],
             basePath: "img/portfolio/gallery/assessment-archive/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 6,
             imagesExtension: "jpg",
             imagesDirection: 'vertical',
@@ -1055,9 +1056,27 @@
             ],
             basePath: "img/portfolio/gallery/pay-the-poolman/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 32,
             imagesExtension: "jpeg",
+            imagesDirection: 'vertical',
+            sectionClass: "filter-2",
+            delay: "0.0s",
+
+        },
+        {
+            title: "Try6Degree",
+            role: "I work on backend side for writing Supabse edge function for calculating degress of sharing and references.",
+            description: "6Degrees is a reward calculator website. where the user can come with a reference code and we will reward its referrer with some points. Suppose a referred person refers some other user. All the parents get some reward points as 1st-degree and 2nd-degree points.",
+            stack: [
+                { title: "Supabase", icon: "devicon-supabase-plain colored" },
+                { title: "Typescript", icon: "devicon-typescript-plain colored" },
+            ],
+            basePath: "img/portfolio/gallery/try6degree/",
+            cover: "cover.jpg",
+            coverIcons: ["fas fa-laptop"],
+            maxImages: 1,
+            imagesExtension: "jpg",
             imagesDirection: 'vertical',
             sectionClass: "filter-2",
             delay: "0.0s",
@@ -1082,7 +1101,7 @@
             ],
             basePath: "img/portfolio/gallery/homezzone/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 5,
             imagesExtension: "jpg",
             imagesDirection: 'vertical',
@@ -1103,7 +1122,7 @@
             ],
             basePath: "img/portfolio/gallery/voxly/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 7,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
@@ -1124,7 +1143,7 @@
             ],
             basePath: "img/portfolio/gallery/hippocrate/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 10,
             imagesExtension: "jpeg",
             imagesDirection: 'vertical',
@@ -1145,7 +1164,7 @@
             ],
             basePath: "img/portfolio/gallery/raydan-captain/",
             cover: "cover.jpg",
-            coverIcons: ["fa-android", "fa-apple"],
+            coverIcons: ["fab fa-android", "fab fa-apple"],
             maxImages: 5,
             imagesExtension: "jpg",
             imagesDirection: 'vertical',
@@ -1168,7 +1187,7 @@
                         <div class="portfolio-text">
                             <h3>${item.title}</h3>
                             <a class="btn">
-                                ${item.coverIcons.map((icon) => `<i class="fab ${icon}"></i>`)}
+                                ${item.coverIcons.map((icon) => `<i class=" ${icon}"></i>`)}
                             </a>
                         </div>
                     </div>

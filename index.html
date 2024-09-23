@@ -25,7 +25,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script> <script src="personal-info.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -822,6 +822,7 @@
 
 </html>
 <script>
+    
     function goToEmail() {
         console.log("called");
 
@@ -890,9 +891,11 @@
 
 
         mySidenav.style.width = "80%";
+        
         setTimeout(() => {
             isOpened = true;
         }, 1000);
+
     }
 
 
@@ -1158,5 +1161,13 @@
     `).join('');
 
     profileProjectList.innerHTML = (data)
+    // getting perosnal info
+    if(personalInfo){
+        console.log("loaded ");
+        console.log(personalInfo);
+        
+    }
+    
+    
 
 </script>

@@ -25,7 +25,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script> <script src="personal-info.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="personal-info.js"></script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
@@ -39,7 +40,7 @@
             </button>
 
             <div class=" justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto">
+                <div class="navbar-nav ml-auto" id="main-menu-items">
                     <a href="#home" class="nav-item nav-link active">Home</a>
                     <a href="#about" class="nav-item nav-link">About</a>
                     <a href="#service" class="nav-item nav-link">Service</a>
@@ -49,7 +50,7 @@
                     <a href="#review" class="nav-item nav-link">Review</a>
                     <a href="#team" class="nav-item nav-link">Team</a>
                     <a href="#blog" class="nav-item nav-link">Blog</a> -->
-                    <a href="#contact" class="nav-item nav-link">Contact</a>
+
                 </div>
             </div>
         </div>
@@ -822,7 +823,7 @@
 
 </html>
 <script>
-    
+
     function goToEmail() {
         console.log("called");
 
@@ -891,7 +892,7 @@
 
 
         mySidenav.style.width = "80%";
-        
+
         setTimeout(() => {
             isOpened = true;
         }, 1000);
@@ -917,6 +918,28 @@
     });
     var isOpened = false;
     var portfolioData = [
+        {
+            title: "Simlea",
+            role: "I work as a main Flutter developer.",
+            description: "Take your lead capture to the next level and boost your ROI with SIMLEA®, the go - to digital solution for exhibitions.Whether you're a trade show pro or just getting started, SIMLEA® makes it easy to collect, manage, and use visitor data, all in one simple platform.",
+            stack: [
+                { title: "Flutter", icon: "devicon-flutter-plain colored" },
+                { title: "Dart", icon: "devicon-dart-plain colored" },
+                { title: "MaterialUI", icon: "devicon-materialui-plain colored" },
+                { title: "Android ", icon: "devicon-android-plain colored" },
+                { title: "IOS", icon: "devicon-apple-original colored" }
+            ],
+            basePath: "img/portfolio/gallery/simlea/",
+
+            cover: "cover.jpg",
+            coverIcons: ["fab fa-android", "fab fa-apple"],
+            maxImages: 14,
+            imagesExtension: "jpeg",
+            imagesDirection: 'vertical',
+            sectionClass: "filter-1",
+            delay: "0.1s",
+
+        },
         {
             title: "ePRINTit SaaS",
             role: "I work as a full-stack developer.",
@@ -1162,12 +1185,14 @@
 
     profileProjectList.innerHTML = (data)
     // getting perosnal info
-    if(personalInfo){
+    if (personalInfo) {
         console.log("loaded ");
         console.log(personalInfo);
-        
+        const mainMenuItems = document.getElementById('main-menu-items');
+        mainMenuItems.appendChild(`  <a href="#contact" class="nav-item nav-link">Contact</a>`);
+
     }
-    
-    
+
+
 
 </script>

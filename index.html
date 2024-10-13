@@ -27,12 +27,84 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="personal-info.js"></script>
+    <script src="projects-info.js"></script>
+    <style>
+        /* Additional styling to hide the mobile menu initially */
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-fix {
+            background-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+
+            }
+
+            .mobile-fix {
+                background-color: white;
+            }
+        }
+
+        .fixed-header-laptop {
+            background-color: transparent;
+            color: white
+        }
+
+        .header-floating {
+            background-color: white;
+
+        }
+
+        .header-floating a {
+            color: black;
+        }
+
+        .header-floating a:hover {
+            color: red;
+        }
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="51">
 
+    <nav class=" mobile-fix  shadow fixed top-0 left-0 right-0 z-10 ">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl md:text-4xl xl:text-4xl font-bold text-white md:text-red-600 title-header">
+                <a>M.Rizwan Ansar</a>
+            </div>
+            <div class="hidden md:flex space-x-4 text-white md:text-red-600">
+                <a href="#home" class="nav-item nav-link active ">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#service" class="nav-item nav-link">Service</a>
+                <a href="#experience" class="nav-item nav-link">Experience</a>
+                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu bg-white shadow-md hidden md:hidden fixed top-16 left-0 right-0 z-40">
+            <div class="flex flex-col space-y-2 p-4">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#service" class="nav-item nav-link">Service</a>
+                <a href="#experience" class="nav-item nav-link">Experience</a>
+                <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Nav Bar Start -->
-    <div class="navbar navbar-expand-lg bg-light navbar-light">
+    <!-- <div class="navbar navbar-expand-lg bg-light navbar-light">
         <div class="container-fluid">
             <a href="index.html" class="navbar-brand">M.Rizwan</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -45,16 +117,16 @@
                     <a href="#about" class="nav-item nav-link">About</a>
                     <a href="#service" class="nav-item nav-link">Service</a>
                     <a href="#experience" class="nav-item nav-link">Experience</a>
-                    <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                    <!-- <a href="#price" class="nav-item nav-link">Price</a>
+                    <a href="#portfolio" class="nav-item nav-link">Portfolio</a> -->
+    <!-- <a href="#price" class="nav-item nav-link">Price</a>
                     <a href="#review" class="nav-item nav-link">Review</a>
                     <a href="#team" class="nav-item nav-link">Team</a>
                     <a href="#blog" class="nav-item nav-link">Blog</a> -->
-
+    <!-- 
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Nav Bar End -->
 
 
@@ -352,7 +424,7 @@
 
     <!-- Side menu start -->
     <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn " onclick="closeNav()">&times;</a>
         <div id="sliderContent">
 
         </div>
@@ -824,6 +896,22 @@
 </html>
 <script>
 
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+
+            $(".mobile-fix").addClass("header-floating");
+            $(".mobile-fix").removeClass("fixed-header-laptop");
+        } else {
+            $(".mobile-fix").removeClass("header-floating");
+            $(".mobile-fix").addClass("fixed-header-laptop");
+        }
+    });
     function goToEmail() {
         console.log("called");
 
@@ -858,10 +946,10 @@
 
         sliderContent.innerHTML = `
         
-        <div class="flex flex-col pl-5">
+        <div class="flex flex-col  pl-5 pt-10 md:pt-0 lg:pt-0 z-[1000]">
 
             <div class="project-title pb-4" > ${contentData.title}</div>
-            <div class="flex flex-row space-x-10" >
+            <div class="flex flex-col md:flex-row  space-x-0 md:space-x-10" >
                 <div class="flex flex-col min-w-[400px] max-w-[400px] text-justify space-y-5">
                     <div class="flex flex-col">
                         <div class="text-white font-bold" >Role</div>
@@ -879,7 +967,7 @@
                     
                     </div>
                 </div>
-                <div class="flex flex-col w-max   ">
+                <div class="flex flex-col w-max pt-10 md:pt-0  ">
                    <p class="text-white font-bold">App Snapshots</p>
                    <div class="flex flex-wrap  pt-1">
                     ${snapshotDiv}
@@ -890,8 +978,12 @@
         
         `;
 
+        if (window.innerWidth <= 768) {// if move 
+            mySidenav.style.width = "100%";
+        } else {
+            mySidenav.style.width = "80%";
+        }
 
-        mySidenav.style.width = "80%";
 
         setTimeout(() => {
             isOpened = true;
@@ -912,257 +1004,8 @@
 
             closeNav();
         }
-
-
-
     });
     var isOpened = false;
-    var portfolioData = [
-        {
-            title: "Simlea",
-            role: "I work as a main Flutter developer.",
-            description: "Take your lead capture to the next level and boost your ROI with SIMLEA®, the go - to digital solution for exhibitions.Whether you're a trade show pro or just getting started, SIMLEA® makes it easy to collect, manage, and use visitor data, all in one simple platform.",
-            stack: [
-                { title: "Flutter", icon: "devicon-flutter-plain colored" },
-                { title: "Dart", icon: "devicon-dart-plain colored" },
-                { title: "MaterialUI", icon: "devicon-materialui-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/simlea/",
-
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 14,
-            imagesExtension: "jpeg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.1s",
-
-        },
-        {
-            title: "ePRINTit SaaS",
-            role: "I work as a full-stack developer.",
-            description: " ePRINTit SaaS is an app that allows users to print documents and photos directly from their mobile devices It is compatible with both iOS and Android platforms and allows for printing to any printer. Users can also print from Google drive, Dropbox, Box or onedrive. The app also allows for easy management and tracking of print jobs, as well as the ability to store and share documents.",
-            stack: [
-                { title: "Ionic", icon: "devicon-ionic-original colored" },
-                { title: "Capacitor", icon: "devicon-capacitor-plain colored" },
-                { title: "Angular", icon: "devicon-angularjs-plain colored" },
-                { title: "Typescript", icon: "devicon-typescript-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/eprint-it/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 10,
-            imagesExtension: "jpeg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.1s",
-
-        },
-
-
-        {
-            title: "DealersBook",
-            role: "I work as a full-stack developer.",
-            description: "Dealers book is a digital book for dealers for keeping their record organised.",
-            stack: [
-                { title: "Flutter", icon: "devicon-flutter-plain colored" },
-                { title: "Dart", icon: "devicon-dart-plain colored" },
-                { title: "MaterialUI", icon: "devicon-materialui-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/dealersbook/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 5,
-            imagesExtension: "png",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        }, {
-            title: "PrinterOn Print",
-            role: "I work as a full-stack developer.",
-            description: "PrinterOn simplifies finding and printing documents to any PrinterOn-supported Enterprise or Public Printing Location, all within a user-friendly application.",
-            stack: [
-                { title: "Ionic", icon: "devicon-ionic-original colored" },
-                { title: "Capacitor", icon: "devicon-capacitor-plain colored" },
-                { title: "Angular", icon: "devicon-angularjs-plain colored" },
-                { title: "Typescript", icon: "devicon-typescript-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/printer-on-print/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 11,
-            imagesExtension: "jpeg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        },
-        {
-            title: "Assessment Archive",
-            role: "I work as a full-stack developer.",
-            description: " Assessment Archive is an innovative real estate app designed to streamline property management by allowing users to easily upload pictures and videos of properties. It enables users to create detailed property records and add multiple assessments for each property. Even without internet access, the app ensures seamless functionality by allowing offline data saving, with automatic syncing when a connection becomes available",
-            stack: [
-                { title: "Vue", icon: "devicon-vuejs-plain colored" },
-                { title: "Nuxt", icon: "devicon-nuxtjs-plain colored" },
-                { title: "Capacitor", icon: "devicon-capacitor-plain colored" },
-                { title: "Tailwind", icon: "devicon-tailwindcss-original colored" },
-                { title: "SQlite", icon: "devicon-sqlite-plain colored" },
-                { title: "Typescript", icon: "devicon-typescript-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/assessment-archive/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 6,
-            imagesExtension: "jpg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        },
-
-        {
-            title: "PayThePoolMan",
-            role: "I work as Ionic/Angular mobile developer.",
-            description: "Paythepoolman Plus is a cutting-edge mobile application designed to streamline workforce management for businesses while they're on the move. Built with Ionic and Angular, this app is packed with features that allow you to effectively plan and track routes to enhance the quality of service. With Paythepoolman Plus, you can easily manage and monitor your workforce, assign tasks, track progress, and ensure timely completion of work orders",
-            stack: [
-                { title: "Ionic", icon: "devicon-ionic-original colored" },
-                { title: "Capacitor", icon: "devicon-capacitor-plain colored" },
-                { title: "Angular", icon: "devicon-angularjs-plain colored" },
-                { title: "Typescript", icon: "devicon-typescript-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/pay-the-poolman/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 32,
-            imagesExtension: "jpeg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        },
-        {
-            title: "Try6Degree",
-            role: "I work on backend side for writing Supabse edge function for calculating degress of sharing and references.",
-            description: "6Degrees is a reward calculator website. where the user can come with a reference code and we will reward its referrer with some points. Suppose a referred person refers some other user. All the parents get some reward points as 1st-degree and 2nd-degree points.",
-            stack: [
-                { title: "Supabase", icon: "devicon-supabase-plain colored" },
-                { title: "Typescript", icon: "devicon-typescript-plain colored" },
-            ],
-            basePath: "img/portfolio/gallery/try6degree/",
-            cover: "cover.jpg",
-            coverIcons: ["fas fa-laptop"],
-            maxImages: 1,
-            imagesExtension: "jpg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-2",
-            delay: "0.0s",
-
-        },
-        {
-            title: "HomeaZZon",
-            role: "I work as Ionic/Angular mobile developer.",
-            description: `  1. Smart Home Organizer 
-                            2. Property Management Tool
-                            3. Virtual Home Assistant
-                            4. Home Inventory Tracker
-                            5. Estate Management App
-                            6. Digital Property Log`,
-            stack: [
-                { title: "Ionic", icon: "devicon-ionic-original colored" },
-                { title: "Capacitor", icon: "devicon-capacitor-plain colored" },
-                { title: "Angular", icon: "devicon-angularjs-plain colored" },
-                { title: "Typescript", icon: "devicon-typescript-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/homezzone/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 5,
-            imagesExtension: "jpg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        },
-        {
-            title: "Voxly",
-            role: "I work as a Flutter developer.",
-            description: "Voxly Tuition provides a new and innovative approach to education.Our efficient teaching methods ensure a successful approach to learning.Our courses ensure that regardless of your child’s abilities they will improve and develop their skills. Our methods work. They are modern and progressive and are designed to bring out the best in your child.Our courses are not only designed for short term growth but also with long term success in mind.",
-            stack: [
-                { title: "Flutter", icon: "devicon-flutter-plain colored" },
-                { title: "Dart", icon: "devicon-dart-plain colored" },
-                { title: "MaterialUI", icon: "devicon-materialui-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/voxly/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 7,
-            imagesExtension: "jpeg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        },
-        {
-            title: "Hippocrate",
-            role: "I work as a Flutter developer.",
-            description: "Hippocrates health system is an AI based medical advisor. Users may provide symptoms, ask medical questions and describe conditions in order to get diagnosis advise, including known medication and treatments.",
-            stack: [
-                { title: "Flutter", icon: "devicon-flutter-plain colored" },
-                { title: "Dart", icon: "devicon-dart-plain colored" },
-                { title: "MaterialUI", icon: "devicon-materialui-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/hippocrate/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 10,
-            imagesExtension: "jpeg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        },
-        {
-            title: "Raydan Captain",
-            role: "I work as a Flutter developer.",
-            description: "That is a food delivery app. Used by the riders to pick food from our restaurant and delivered to the given address.Raydan online Food ordering application (Home Delivery or Pickup from the Branch or Future Orders)",
-            stack: [
-                { title: "Flutter", icon: "devicon-flutter-plain colored" },
-                { title: "Dart", icon: "devicon-dart-plain colored" },
-                { title: "MaterialUI", icon: "devicon-materialui-plain colored" },
-                { title: "Android ", icon: "devicon-android-plain colored" },
-                { title: "IOS", icon: "devicon-apple-original colored" }
-            ],
-            basePath: "img/portfolio/gallery/raydan-captain/",
-            cover: "cover.jpg",
-            coverIcons: ["fab fa-android", "fab fa-apple"],
-            maxImages: 5,
-            imagesExtension: "jpg",
-            imagesDirection: 'vertical',
-            sectionClass: "filter-1",
-            delay: "0.0s",
-
-        },
-    ];
-    // Get the ul element
     const profileProjectList = document.getElementById('profile-project-list');
 
     profileProjectList.classList.add('row');

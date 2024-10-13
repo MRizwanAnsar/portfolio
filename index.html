@@ -66,6 +66,10 @@
                 flex-direction: column;
                 width: 100%;
             }
+
+            .hero-text {
+                margin-top: 20px;
+            }
         }
 
         .fixed-header-laptop {
@@ -163,9 +167,8 @@
                                 Fullstack Developer, Hybrid App Developer(Ionic/Flutter), Web Developer(Vue/Nuxt/Tailwind), Backend Developer(Node.js/Express/Nest)
                             </div>
                         </div>
-                        <div class="hero-btn">
-                            <a class="btn" href="">Hire Me</a>
-                            <a class="btn" href="">Contact Me</a>
+                        <div class="hero-btn" id="mainPageButton">
+
                         </div>
                     </div>
                 </div>
@@ -720,26 +723,7 @@
             <img class="object-cover h-[400px] w-[400px] rounded-full " src="img/contact.jpeg" alt="img">
         </div>
         <div class="w-[400px] flex flex-col">
-            <h1 class="text-2xl ">Contact </h1>
-            <div class="pl-2 pt-2">
-                <div class="flex flex-row items-center gap-4 text-gray-700 hover:text-black">
-                    <span class="rotate-90"><i class="fas fa-phone"></i></span>
-                    <p>+92 308 4917561</p>
-
-                </div>
-                <div onClick="goToEmail()" class="flex flex-row items-center gap-4 text-gray-700 hover:text-black">
-
-                    <i class="fas fa-envelope"></i>
-                    <p>rizwanansar5@gmail.com</p>
-
-                </div>
-                <div class="flex flex-row items-center gap-4 text-gray-700 hover:text-black">
-                    <span class="text-xl"><i class=" fab fa-skype"></i></span>
-
-                    <p>live:rizwanansar5</p>
-
-                </div>
-            </div>
+            <div id="personalInfoDiv"></div>
 
 
             <div class=" flex flex-row items-center gap-4">
@@ -749,11 +733,10 @@
                         <path d="M244.043 37.557l13.306 53.636 14.656-53.636h17.466l-22.526 77.512h-17.467l-13.83-53.974-13.794 53.936h-17.466L181.86 37.52h17.467l14.655 53.636 13.306-53.636h16.754v.038zm87.22-2.324c-22.676 0-41.042 18.403-41.042 41.042 0 22.677 18.403 41.043 41.042 41.043 22.677 0 41.08-18.366 41.08-41.043 0-22.676-18.403-41.042-41.08-41.042zm0 65.218c-13.343 0-24.138-10.795-24.138-24.138 0-13.344 10.832-24.138 24.138-24.138 13.344 0 24.138 10.794 24.138 24.138 0 13.306-10.794 24.138-24.138 24.138zm90.968-45.54c-11.731 0-21.214 9.52-21.214 21.214v38.906h-17.58V37.557h17.58v11.919s7.496-11.957 22.901-11.957h5.397v17.392h-7.084zm58.997 18.366c12.48-7.047 20.952-20.428 20.952-35.758H484.6c0 12.931-10.494 23.426-23.425 23.426h-2.362V.15h-17.578V115.03h17.578V78.524h2.1c1.724 0 3.973 1.125 4.985 2.511l24.962 33.996h21.065l-30.697-41.754z" />
                     </svg>
                 </a>
-                <a href="https://www.linkedin.com/in/rizwan-ansar-9a911a128/" target="_blank" rel="noopener noreferrer">
-                    <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="150px" height="150px">
-                        <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" />
-                    </svg>
-                </a>
+                <span id="linkedinDiv">
+
+                </span>
+
 
             </div>
             <!-- <form class="flex flex-col gap-2" name="sentMessage" id="contactForm" novalidate="novalidate">
@@ -846,29 +829,8 @@
             <div class="container">
                 <div class="footer-info">
                     <h2>Muhammad Rizwan Ansar</h2>
-                    <h3>Gulshan Park, Nashat Colony, Lahore Cantt, Pakistan</h3>
-                    <div class="footer-menu">
-                        <p>+92 308 4917561</p>
-                        <p>rizwanansar5@gmail.com</p>
-                    </div>
-                    <div class="flex flex-row items-center justify-center pt-4">
-                        <!-- <a href=""><i class="fab fa-twitter"></i></a> -->
-                        <!-- <a href=""><i class="fab fa-facebook-f"></i></a> -->
-                        <!-- <a href=""><i class="fab fa-youtube"></i></a> -->
-                        <!-- <a href="https://www.upwork.com/freelancers/~0164433945121c5361?s=996364627857502209"><i class="fa-brands fa-upwork"></i></a> -->
-                        <a href="https://www.upwork.com/freelancers/~0164433945121c5361?s=996364627857502209" target="_blank" rel="noopener noreferrer">
-                            <svg width="100" height="100" viewBox="0 0 512 153" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
-                                <path d="M140.107 96.628c-8.321 0-16.118-3.523-23.202-9.258l1.725-8.096.075-.3c1.536-8.62 6.409-23.089 21.402-23.089 11.244 0 20.39 9.146 20.39 20.39-.038 11.207-9.183 20.353-20.39 20.353zm0-61.395c-19.154 0-33.996 12.444-40.03 32.909-9.221-13.831-16.193-30.435-20.278-44.416H59.184v53.636c0 10.57-8.621 19.19-19.191 19.19-10.57 0-19.19-8.62-19.19-19.19V23.726H.186v53.636c-.075 21.965 17.804 39.993 39.768 39.993 21.965 0 39.844-18.028 39.844-39.993v-8.995c4.01 8.358 8.92 16.791 14.88 24.288l-12.632 59.37h21.103l9.145-43.066c8.021 5.135 17.242 8.359 27.812 8.359 22.601 0 41.005-18.516 41.005-41.118 0-22.564-18.404-40.967-41.005-40.967z" fill="#6FDA44" />
-                                <path d="M244.043 37.557l13.306 53.636 14.656-53.636h17.466l-22.526 77.512h-17.467l-13.83-53.974-13.794 53.936h-17.466L181.86 37.52h17.467l14.655 53.636 13.306-53.636h16.754v.038zm87.22-2.324c-22.676 0-41.042 18.403-41.042 41.042 0 22.677 18.403 41.043 41.042 41.043 22.677 0 41.08-18.366 41.08-41.043 0-22.676-18.403-41.042-41.08-41.042zm0 65.218c-13.343 0-24.138-10.795-24.138-24.138 0-13.344 10.832-24.138 24.138-24.138 13.344 0 24.138 10.794 24.138 24.138 0 13.306-10.794 24.138-24.138 24.138zm90.968-45.54c-11.731 0-21.214 9.52-21.214 21.214v38.906h-17.58V37.557h17.58v11.919s7.496-11.957 22.901-11.957h5.397v17.392h-7.084zm58.997 18.366c12.48-7.047 20.952-20.428 20.952-35.758H484.6c0 12.931-10.494 23.426-23.425 23.426h-2.362V.15h-17.578V115.03h17.578V78.524h2.1c1.724 0 3.973 1.125 4.985 2.511l24.962 33.996h21.065l-30.697-41.754z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/rizwan-ansar-9a911a128/" target="_blank" rel="noopener noreferrer">
-                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="150px" height="150px">
-                                <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" />
-                            </svg>
-                        </a>
+                    <span id="personalInfoFooter"></span>
 
-                    </div>
                 </div>
             </div>
             <div class="container copyright">
@@ -1066,9 +1028,65 @@
     if (personalInfo) {
         console.log("loaded ");
         console.log(personalInfo);
-        const mainMenuItems = document.getElementById('main-menu-items');
-        mainMenuItems.appendChild(`  <a href="#contact" class="nav-item nav-link">Contact</a>`);
+        // const mainMenuItems = document.getElementById('main-menu-items');
+        // mainMenuItems.appendChild(`  <a href="#contact" class="nav-item nav-link">Contact</a>`);
+        const personalInfoDiv = document.getElementById('personalInfoDiv');
+        const personalInfoFooter = document.getElementById('personalInfoFooter');
+        const linkedinDiv = document.getElementById('linkedinDiv');
+        const mainPageButton = document.getElementById('mainPageButton');
 
+        personalInfoDiv.innerHTML = `
+        <h1 class="text-2xl ">Contact </h1>
+            <div class="pl-2 pt-2">
+                <div class="flex flex-row items-center gap-4 text-gray-700 hover:text-black">
+                    <span class="rotate-90"><i class="fas fa-phone"></i></span>
+                    <p>+92 308 4917561</p>
+
+                </div>
+                <div onClick="goToEmail()" class="flex flex-row items-center gap-4 text-gray-700 hover:text-black">
+
+                    <i class="fas fa-envelope"></i>
+                    <p>rizwanansar5@gmail.com</p>
+
+                </div>
+                <div class="flex flex-row items-center gap-4 text-gray-700 hover:text-black">
+                    <span class="text-xl"><i class=" fab fa-skype"></i></span>
+
+                    <p>live:rizwanansar5</p>
+
+                </div>
+            </div>
+        `;
+        linkedinDiv.innerHTML = `<a href="https://www.linkedin.com/in/rizwan-ansar-9a911a128/" target="_blank" rel="noopener noreferrer">
+                    <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="150px" height="150px">
+                        <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" />
+                    </svg>
+                </a>`;
+
+        personalInfoFooter.innerHTML = ` <h3>Gulshan Park, Nashat Colony, Lahore Cantt, Pakistan</h3>
+                    <div class="footer-menu">
+                        <p>+92 308 4917561</p>
+                        <p>rizwanansar5@gmail.com</p>
+                    </div>
+                    <div class="flex flex-row items-center justify-center pt-4">
+                       
+                        <a href="https://www.upwork.com/freelancers/~0164433945121c5361?s=996364627857502209" target="_blank" rel="noopener noreferrer">
+                            <svg width="100" height="100" viewBox="0 0 512 153" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+                                <path d="M140.107 96.628c-8.321 0-16.118-3.523-23.202-9.258l1.725-8.096.075-.3c1.536-8.62 6.409-23.089 21.402-23.089 11.244 0 20.39 9.146 20.39 20.39-.038 11.207-9.183 20.353-20.39 20.353zm0-61.395c-19.154 0-33.996 12.444-40.03 32.909-9.221-13.831-16.193-30.435-20.278-44.416H59.184v53.636c0 10.57-8.621 19.19-19.191 19.19-10.57 0-19.19-8.62-19.19-19.19V23.726H.186v53.636c-.075 21.965 17.804 39.993 39.768 39.993 21.965 0 39.844-18.028 39.844-39.993v-8.995c4.01 8.358 8.92 16.791 14.88 24.288l-12.632 59.37h21.103l9.145-43.066c8.021 5.135 17.242 8.359 27.812 8.359 22.601 0 41.005-18.516 41.005-41.118 0-22.564-18.404-40.967-41.005-40.967z" fill="#6FDA44" />
+                                <path d="M244.043 37.557l13.306 53.636 14.656-53.636h17.466l-22.526 77.512h-17.467l-13.83-53.974-13.794 53.936h-17.466L181.86 37.52h17.467l14.655 53.636 13.306-53.636h16.754v.038zm87.22-2.324c-22.676 0-41.042 18.403-41.042 41.042 0 22.677 18.403 41.043 41.042 41.043 22.677 0 41.08-18.366 41.08-41.043 0-22.676-18.403-41.042-41.08-41.042zm0 65.218c-13.343 0-24.138-10.795-24.138-24.138 0-13.344 10.832-24.138 24.138-24.138 13.344 0 24.138 10.794 24.138 24.138 0 13.306-10.794 24.138-24.138 24.138zm90.968-45.54c-11.731 0-21.214 9.52-21.214 21.214v38.906h-17.58V37.557h17.58v11.919s7.496-11.957 22.901-11.957h5.397v17.392h-7.084zm58.997 18.366c12.48-7.047 20.952-20.428 20.952-35.758H484.6c0 12.931-10.494 23.426-23.425 23.426h-2.362V.15h-17.578V115.03h17.578V78.524h2.1c1.724 0 3.973 1.125 4.985 2.511l24.962 33.996h21.065l-30.697-41.754z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rizwan-ansar-9a911a128/" target="_blank" rel="noopener noreferrer">
+                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="150px" height="150px">
+                                <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z" />
+                            </svg>
+                        </a>
+
+                    </div>`;
+
+
+        mainPageButton.innerHTML = ` 
+                            <a class="btn" href="#personalInfoDiv">Contact Me</a>`
     }
 
 

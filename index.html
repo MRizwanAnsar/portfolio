@@ -64,6 +64,10 @@
             color: white;
         }
 
+        .pp-container {
+            padding-left: 40px;
+        }
+
         @media (max-width: 768px) {
             .mobile-menu {
                 display: block;
@@ -86,6 +90,10 @@
 
             .title-header {
                 color: black;
+            }
+
+            .pp-container {
+                padding-left: 0px;
             }
         }
 
@@ -226,16 +234,14 @@
                         </div>
                         <div class="skills">
                             <div class="skill-name">
-                                <p>Mobile Development(Flutter/Ionic/Capacitor/Angular)</p>
+                                <p>Mobile Development</p>
                                 <p>100%</p>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                             <div class="skill-name">
-                                <p>Web Development(Nuxt)</p>
-                                <!-- TODO: uncomment and check responsiveness for following -->
-                                <!-- <p>Web Development(Nuxt/Vue3/Tailwind/Angular/HTML/CSS)</p> -->
+                                <p>Web Development</p>
                                 <p>100%</p>
                             </div>
                             <div class="progress">
@@ -245,10 +251,10 @@
                                 <p>Backend Development</p>
                                 <p>100%</p>
                             </div>
-                            <div class="progress">=
-
+                            <div class="progress">
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
+
                             <div class="skill-name">
                                 <p>Database</p>
                                 <p>100%</p>
@@ -257,7 +263,7 @@
                                 <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
-                        <a class="btn" href="">Learn More</a>
+                        <a class="btn" href="#contact">Contact</a>
                     </div>
                 </div>
             </div>
@@ -960,7 +966,7 @@
 
         sliderContent.innerHTML = `
         
-        <div class="flex flex-col pl-2 md:pl-5 lg:pl-5 xl:pl-5 pt-10 md:pt-0 lg:pt-0 z-[1000]">
+        <div class="flex flex-col pp-container pt-10 md:pt-0 lg:pt-0 z-[1000]">
 
             <div class="project-title pb-4" > ${contentData.title}</div>
             <div class="flex flex-col md:flex-row  space-x-0 md:space-x-10" >

@@ -24,8 +24,16 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+
+            }
+        }
+    </script>
+    <link href="css/style.css" rel="stylesheet">
+
     <script src="personal-info.js"></script>
     <script src="projects-info.js"></script>
     <style>
@@ -38,6 +46,11 @@
             background-color: transparent;
         }
 
+        .wrap-responsiv {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
         @media (max-width: 768px) {
             .mobile-menu {
                 display: block;
@@ -46,6 +59,12 @@
 
             .mobile-fix {
                 background-color: white;
+            }
+
+            .wrap-responsiv {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
             }
         }
 
@@ -92,7 +111,7 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="mobile-menu bg-white shadow-md hidden md:hidden fixed top-16 left-0 right-0 z-40">
+        <div id="mobile-menu" class="mobile-menu bg-white shadow-md hidden md:hidden fixed top-16 left-0 right-0 z-40 ">
             <div class="flex flex-col space-y-2 p-4">
                 <a href="#home" class="nav-item nav-link active">Home</a>
                 <a href="#about" class="nav-item nav-link">About</a>
@@ -402,7 +421,7 @@
         <div class="container">
             <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                 <p>My Portfolio</p>
-                <h2>My Excellent Portfolio</h2>
+                <h2>Some Glimpses of My Work</h2>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -897,20 +916,36 @@
 <script>
 
     const menuButton = document.getElementById('menu-button');
+    const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
     const mobileMenu = document.getElementById('mobile-menu');
 
     menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
 
-            $(".mobile-fix").addClass("header-floating");
-            $(".mobile-fix").removeClass("fixed-header-laptop");
-        } else {
-            $(".mobile-fix").removeClass("header-floating");
-            $(".mobile-fix").addClass("fixed-header-laptop");
+
+            // Example action: Log the clicked link's href
+            console.log('Link clicked:', this.href);
+            mobileMenu.classList.toggle('hidden');
+            // You can also implement any other action here
+            // For example, you can close the mobile menu or navigate to a section
+        });
+    });
+
+    $(window).scroll(function () {
+        if (window.innerWidth > 768) {//if on laptop
+            if ($(this).scrollTop() > 0) {
+
+                $(".mobile-fix").addClass("header-floating");
+                $(".mobile-fix").removeClass("fixed-header-laptop");
+            } else {
+                $(".mobile-fix").removeClass("header-floating");
+                $(".mobile-fix").addClass("fixed-header-laptop");
+            }
         }
+
     });
     function goToEmail() {
         console.log("called");
@@ -946,18 +981,18 @@
 
         sliderContent.innerHTML = `
         
-        <div class="flex flex-col  pl-5 pt-10 md:pt-0 lg:pt-0 z-[1000]">
+        <div class="flex flex-col pl-2 md:pl-5 lg:pl-5 xl:pl-5 pt-10 md:pt-0 lg:pt-0 z-[1000]">
 
             <div class="project-title pb-4" > ${contentData.title}</div>
             <div class="flex flex-col md:flex-row  space-x-0 md:space-x-10" >
-                <div class="flex flex-col min-w-[400px] max-w-[400px] text-justify space-y-5">
+                <div class="flex flex-col  md:min-w-[400px] md:max-w-[400px] text-justify space-y-5">
                     <div class="flex flex-col">
                         <div class="text-white font-bold" >Role</div>
-                        <div class="pl-1 text-white">${contentData.role}</div>
+                        <div class="pl-1 text-white pr-2 md:pr-0">${contentData.role}</div>
                     </div>
                     <div class="flex flex-col">
                         <div class="text-white font-bold" >Description </div>
-                        <div class="pl-1 text-white">${contentData.description}</div>
+                        <div class="pl-1 text-white pr-2 md:pr-0 ">${contentData.description}</div>
                     </div>
                     <div class="flex flex-col pt-1">
                         <div class="text-white font-bold" >Technologies </div>
@@ -967,9 +1002,9 @@
                     
                     </div>
                 </div>
-                <div class="flex flex-col w-max pt-10 md:pt-0  ">
+                <div class="flex flex-col w-max pt-10 md:pt-0 self-center  ">
                    <p class="text-white font-bold">App Snapshots</p>
-                   <div class="flex flex-wrap  pt-1">
+                   <div class="wrap-responsiv  pt-1">
                     ${snapshotDiv}
                    </div>
                 </div>
@@ -978,7 +1013,7 @@
         
         `;
 
-        if (window.innerWidth <= 768) {// if move 
+        if (window.innerWidth <= 768) {// if mobile
             mySidenav.style.width = "100%";
         } else {
             mySidenav.style.width = "80%";

@@ -64,6 +64,10 @@
             color: white;
         }
 
+        .pp-container {
+            padding-left: 40px;
+        }
+
         @media (max-width: 768px) {
             .mobile-menu {
                 display: block;
@@ -86,6 +90,10 @@
 
             .title-header {
                 color: black;
+            }
+
+            .pp-container {
+                padding-left: 0px;
             }
         }
 
@@ -960,7 +968,7 @@
 
         sliderContent.innerHTML = `
         
-        <div class="flex flex-col pl-2 md:pl-5 lg:pl-5 xl:pl-5 pt-10 md:pt-0 lg:pt-0 z-[1000]">
+        <div class="flex flex-col pp-container pt-10 md:pt-0 lg:pt-0 z-[1000]">
 
             <div class="project-title pb-4" > ${contentData.title}</div>
             <div class="flex flex-col md:flex-row  space-x-0 md:space-x-10" >

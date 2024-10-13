@@ -5,12 +5,16 @@
     <meta charset="utf-8">
     <title>M.Rizwan</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free Website Template" name="keywords">
-    <meta content="Free Website Template" name="description">
+
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
-
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="M. Rizwan's Portfolio" />
+    <meta property="og:description" content="Explore my skills and projects!" />
+    <meta property="og:image" content="https://https://portfolio-peach-zeta-61.vercel.app/img/contact.jpeg" />
+    <meta property="og:url" content="https://portfolio-peach-zeta-61.vercel.app/" />
+    <meta property="og:type" content="website" />
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -49,6 +53,11 @@
         .wrap-responsiv {
             display: flex;
             flex-wrap: wrap;
+        }
+
+        .shadow-custom {
+            filter: drop-shadow(50px 0 50px rgba(0, 0, 0, 0.5));
+            /* Adjust as needed */
         }
 
         @media (max-width: 768px) {
@@ -174,7 +183,7 @@
                 </div>
                 <div class="col-sm-12 col-md-6 d-none d-md-block">
                     <div class="hero-image">
-                        <img src="img/hero.png" alt="Hero Image">
+                        <img src="img/hero.png" class="shadow-custom" alt="Hero Image">
                     </div>
                 </div>
             </div>

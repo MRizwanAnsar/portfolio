@@ -43,7 +43,28 @@ var portfolioData = [
     sectionClass: "filter-1",
     delay: "0.1s",
   },
+  {
+    title: "Civic(React)",
+    role: "I work on front end side as developer. I have desing and build it completely from the scratch",
+    description: `That is any data-intensive application built for the vendor and agencies to track their data. So Major features I have implemented are
+    <br/>\u2022 Data Search. <br/>\u2022 Graph representation. <br/>\u2022 Api calls cache.<br/>\u2022 Social logins.<br/>\u2022 Design with tailwind`,
+    stack: [
+      { title: "React", icon: "devicon-react-original colored" },
+      { title: "Next", icon: "devicon-nextjs-original-wordmark " },
 
+      { title: "Redux", icon: "devicon-redux-original colored" },
+      { title: "tailwind", icon: "devicon-tailwindcss-original colored" },
+      { title: "TS", icon: "devicon-typescript-plain colored" },
+    ],
+    basePath: "img/portfolio/gallery/civic/",
+    cover: "cover.jpg",
+    coverIcons: ["fas fa-laptop"],
+    maxImages: 1,
+    imagesExtension: "jpg",
+    imagesDirection: "vertical",
+    sectionClass: "filter-2",
+    delay: "0.0s",
+  },
   {
     title: "DealersBook",
     role: "I work as a full-stack developer.",
@@ -65,6 +86,7 @@ var portfolioData = [
     sectionClass: "filter-1",
     delay: "0.0s",
   },
+
   {
     title: "PrinterOn Print",
     role: "I work as a full-stack developer.",

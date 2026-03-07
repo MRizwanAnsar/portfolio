@@ -771,25 +771,30 @@
 
 
             </div>
-            <form class="flex flex-col gap-2 mt-4" action="mailto:rizwanansar5@gmail.com" method="post" enctype="text/plain" name="sentMessage" id="contactForm">
+            <!-- Contact form handled securely by Formspree via AJAX -->
+            <form class="flex flex-col gap-2 mt-4" action="https://formspree.io/f/mbdzjwlb" method="POST" id="contactForm">
                 <div class="control-group">
-                    <input type="text" name="Name" class="form-control" id="name" placeholder="Your Name" required="required" />
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="required" />
                     <p class="help-block"></p>
                 </div>
                 <div class="control-group">
-                    <input type="email" name="Email" class="form-control" id="email" placeholder="Your Email" required="required" />
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required="required" />
                     <p class="help-block"></p>
                 </div>
                 <div class="control-group">
-                    <input type="text" name="Subject" class="form-control" id="subject" placeholder="Subject" required="required" />
+                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required="required" />
                     <p class="help-block"></p>
                 </div>
                 <div class="control-group">
-                    <textarea class="form-control" name="Message" id="message" placeholder="Message" required="required" rows="4"></textarea>
+                    <textarea class="form-control" name="message" id="message" placeholder="Message" required="required" rows="4"></textarea>
                     <p class="help-block"></p>
                 </div>
                 <div>
-                    <button class="btn w-full" type="submit" id="sendMessageButton">Send Message</button>
+                    <button class="btn w-full flex justify-center items-center gap-2" type="submit" id="sendMessageButton">
+                        <span id="buttonText">Send Message</span>
+                        <i id="buttonLoader" class="fas fa-circle-notch fa-spin hidden"></i>
+                    </button>
+                    <p id="formStatusMessage" class="mt-2 text-center text-sm hidden"></p>
                 </div>
             </form>
         </div>
@@ -1115,6 +1120,65 @@
                             <a class="btn" href="#personalInfoDiv">Contact Me</a>`
     }
 
+    // Formspree AJAX Submission Logic
+    const contactForm = document.getElementById('contactForm');
+    const buttonText = document.getElementById('buttonText');
+    const buttonLoader = document.getElementById('buttonLoader');
+    const formStatusMessage = document.getElementById('formStatusMessage');
+    const sendMessageButton = document.getElementById('sendMessageButton');
 
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            // Show loading state
+            buttonText.textContent = 'Sending...';
+            buttonLoader.classList.remove('hidden');
+            sendMessageButton.disabled = true;
+            formStatusMessage.classList.add('hidden');
+            
+            const data = new FormData(event.target);
+            
+            try {
+                const response = await fetch(event.target.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    formStatusMessage.textContent = 'Message sent successfully!';
+                    formStatusMessage.className = 'mt-2 text-center text-sm text-green-600';
+                    contactForm.reset();
+                } else {
+                    const errorData = await response.json();
+                    if (Object.hasOwn(errorData, 'errors')) {
+                        formStatusMessage.textContent = errorData.errors.map(error => error.message).join(", ");
+                    } else {
+                        formStatusMessage.textContent = 'Oops! There was a problem submitting your form';
+                    }
+                    formStatusMessage.className = 'mt-2 text-center text-sm text-red-600';
+                }
+            } catch (error) {
+                formStatusMessage.textContent = 'Oops! There was a problem submitting your form';
+                formStatusMessage.className = 'mt-2 text-center text-sm text-red-600';
+            } finally {
+                // Remove loading state
+                formStatusMessage.classList.remove('hidden');
+                buttonText.textContent = 'Send Message';
+                buttonLoader.classList.add('hidden');
+                sendMessageButton.disabled = false;
+                
+                // Hide success message after 5 seconds
+                if(formStatusMessage.classList.contains('text-green-600')) {
+                    setTimeout(() => {
+                        formStatusMessage.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+        });
+    }
 
 </script>

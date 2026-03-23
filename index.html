@@ -750,15 +750,15 @@
 
 
     <!-- Contact Start -->
-    <div class="flex flex-row bg-[#a29797] py-10 items-center justify-center gap-10" data-wow-delay="0.1s" id="contact">
-        <div>
-            <img class="object-cover h-[400px] w-[400px] md:ml-0 m-2  rounded-2xl md:rounded-full " src="img/contact.jpeg" alt="img">
+    <div class="flex flex-col md:flex-row bg-[#a29797] py-10 items-center justify-center gap-10 md:gap-10 px-4" data-wow-delay="0.1s" id="contact">
+        <div class="w-full flex justify-center md:justify-center md:w-[400px] md:flex-shrink-0">
+            <img class="object-cover h-[240px] w-full max-w-[400px] mx-2 md:mx-0 rounded-2xl md:rounded-full md:h-[400px] md:w-[400px]" src="img/contact.jpeg" alt="img">
         </div>
-        <div class="w-[400px] flex flex-col">
+        <div class="w-full md:w-[400px] flex flex-col items-stretch md:items-center md:flex-shrink-0">
             <div id="personalInfoDiv"></div>
 
 
-            <div class=" flex flex-row items-center gap-4">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
                 <a class="" href="https://www.upwork.com/freelancers/~0164433945121c5361?s=996364627857502209" target="_blank" rel="noopener noreferrer">
                     <svg width="100" height="100" viewBox="0 0 512 153" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
                         <path d="M140.107 96.628c-8.321 0-16.118-3.523-23.202-9.258l1.725-8.096.075-.3c1.536-8.62 6.409-23.089 21.402-23.089 11.244 0 20.39 9.146 20.39 20.39-.038 11.207-9.183 20.353-20.39 20.353zm0-61.395c-19.154 0-33.996 12.444-40.03 32.909-9.221-13.831-16.193-30.435-20.278-44.416H59.184v53.636c0 10.57-8.621 19.19-19.191 19.19-10.57 0-19.19-8.62-19.19-19.19V23.726H.186v53.636c-.075 21.965 17.804 39.993 39.768 39.993 21.965 0 39.844-18.028 39.844-39.993v-8.995c4.01 8.358 8.92 16.791 14.88 24.288l-12.632 59.37h21.103l9.145-43.066c8.021 5.135 17.242 8.359 27.812 8.359 22.601 0 41.005-18.516 41.005-41.118 0-22.564-18.404-40.967-41.005-40.967z" fill="#6FDA44" />
@@ -772,21 +772,21 @@
 
             </div>
             <!-- Contact form handled securely by Formspree via AJAX -->
-            <form class="flex flex-col gap-2 mt-4" action="https://formspree.io/f/mbdzjwlb" method="POST" id="contactForm">
+            <form class="flex flex-col gap-2 mt-4 w-full items-stretch" action="https://formspree.io/f/mbdzjwlb" method="POST" id="contactForm">
                 <div class="control-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="required" />
+                    <input type="text" name="name" class="form-control w-full" id="name" placeholder="Your Name" required="required" />
                     <p class="help-block"></p>
                 </div>
                 <div class="control-group">
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required="required" />
+                    <input type="email" name="email" class="form-control w-full" id="email" placeholder="Your Email" required="required" />
                     <p class="help-block"></p>
                 </div>
                 <div class="control-group">
-                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required="required" />
+                    <input type="text" name="subject" class="form-control w-full" id="subject" placeholder="Subject" required="required" />
                     <p class="help-block"></p>
                 </div>
                 <div class="control-group">
-                    <textarea class="form-control" name="message" id="message" placeholder="Message" required="required" rows="4"></textarea>
+                    <textarea class="form-control w-full" name="message" id="message" placeholder="Message" required="required" rows="4"></textarea>
                     <p class="help-block"></p>
                 </div>
                 <div>

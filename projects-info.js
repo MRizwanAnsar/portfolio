@@ -1,5 +1,28 @@
 var portfolioData = [
   {
+    title: "Formit AI",
+    role: "Lead engineer for the AI form-builder SaaS — frontend monorepo and Fastify API.",
+    description:
+      "Formit AI is a commercial form platform: describe the form in plain English and it builds itself, then asks the next useful question. I built prompt-to-fields generation, AI follow-ups on vague or low-score answers, six embed modes, analytics, Slack / Sheets / Zapier, and an MCP server so Cursor and Claude can edit forms. Live at formitai.com.",
+    website: "https://formitai.com",
+    stack: [
+      { title: "Next.js", icon: "devicon-nextjs-original-wordmark" },
+      { title: "React", icon: "devicon-react-original colored" },
+      { title: "TypeScript", icon: "devicon-typescript-plain colored" },
+      { title: "Vite", icon: "devicon-vitejs-plain colored" },
+      { title: "Fastify", icon: "devicon-nodejs-plain colored" },
+      { title: "Prisma", icon: "devicon-prisma-original" },
+    ],
+    basePath: "img/portfolio/gallery/formit-ai/",
+    cover: "cover.jpg",
+    coverIcons: ["fas fa-robot", "fas fa-laptop"],
+    maxImages: 5,
+    imagesExtension: "jpg",
+    imagesDirection: "horizontal",
+    sectionClass: "filter-2 filter-3",
+    delay: "0.0s",
+  },
+  {
     title: "Simlea",
     role: "I work as a main Flutter developer.",
     description:

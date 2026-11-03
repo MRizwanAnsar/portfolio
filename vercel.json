@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio-peach-zeta-61.vercel.app"
+        }
+      ],
+      "destination": "https://rizwanansar.info/:path*",
+      "permanent": true
+    }
+  ]
+}

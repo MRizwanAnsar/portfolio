@@ -1,9 +1,42 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+:root,
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-muted: #f7f7f7;
+  --text: #797979;
+  --text-heading: #414141;
+  --text-strong: #111111;
+  --text-soft: #5a5a5a;
+  --border: #dddddd;
+  --chip-bg: #f4f4f4;
+  --chip-text: #2b2b2b;
+  --nav-scrolled-bg: #ffffff;
+  --nav-scrolled-text: #111111;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+html[data-theme="dark"] {
+  --bg: #0f1115;
+  --bg-elevated: #1a1d24;
+  --bg-muted: #151821;
+  --text: #b8bdc7;
+  --text-heading: #f2f4f7;
+  --text-strong: #f2f4f7;
+  --text-soft: #b8bdc7;
+  --border: #2c313c;
+  --chip-bg: #232833;
+  --chip-text: #e8eaef;
+  --nav-scrolled-bg: #151821;
+  --nav-scrolled-text: #f2f4f7;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
 body {
-  color: #797979;
-  background: #ffffff;
+  color: var(--text);
+  background: var(--bg);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -13,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #414141;
+  color: var(--text-heading);
 }
 /* Side nav start */
 .sidenav {
@@ -115,7 +148,7 @@ a:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: var(--bg);
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.3s ease-out, visibility 0s linear 0.3s;
@@ -482,7 +515,8 @@ a:focus {
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background: #ffffff;
+  background: var(--bg);
+  color: var(--text-heading);
 }
 
 .section-header p::before {
@@ -651,7 +685,7 @@ a:focus {
   height: 16px;
   top: 48px;
   right: -8px;
-  background: #ffffff;
+  background: var(--bg-elevated);
   border: 2px solid #ef233c;
   border-radius: 16px;
   z-index: 1;
@@ -670,12 +704,12 @@ a:focus {
   right: 10px;
   z-index: 1;
   border: 10px solid;
-  border-color: transparent transparent transparent #dddddd;
+  border-color: transparent transparent transparent var(--border);
 }
 
 .experience .timeline .timeline-item.right::before {
   left: 10px;
-  border-color: transparent #dddddd transparent transparent;
+  border-color: transparent var(--border) transparent transparent;
 }
 
 .experience .timeline .timeline-date {
@@ -702,15 +736,15 @@ a:focus {
 
 .experience .timeline .timeline-text {
   padding: 30px;
-  background: #ffffff;
+  background: var(--bg-elevated);
   position: relative;
-  border-right: 5px solid #dddddd;
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+  border-right: 5px solid var(--border);
+  box-shadow: 0 0 60px var(--shadow);
 }
 
 .experience .timeline .timeline-item.right .timeline-text {
   border-right: none;
-  border-left: 5px solid #dddddd;
+  border-left: 5px solid var(--border);
 }
 
 .experience .timeline .timeline-text h2 {
@@ -808,7 +842,7 @@ a:focus {
   align-items: center;
   justify-content: center;
   border: 1px solid #ef233c;
-  background: #ffffff;
+  background: var(--bg-elevated);
 }
 
 .service .service-icon i {
@@ -933,8 +967,8 @@ a:focus {
   margin: -30px 15px 30px 15px;
   display: flex;
   align-items: center;
-  background: #ffffff;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 15px var(--shadow);
 }
 
 .portfolio .portfolio-text h3 {
@@ -1779,13 +1813,13 @@ textarea:focus-visible,
 .about-panel {
   margin: 0 0 20px 0;
   padding: 70px 0 20px;
-  background: #fff;
+  background: var(--bg);
 }
 
 .about-panel p {
   font-size: 16px;
   line-height: 1.7;
-  color: #5a5a5a;
+  color: var(--text-soft);
 }
 
 .about-stats {
@@ -1797,13 +1831,13 @@ textarea:focus-visible,
 
 .about-stat {
   padding: 18px 16px;
-  background: #f7f7f7;
+  background: var(--bg-muted);
   border-left: 4px solid #ef233c;
 }
 
 .about-stat strong {
   display: block;
-  color: #111111;
+  color: var(--text-strong);
   font-size: 28px;
   line-height: 1.2;
 }
@@ -1811,14 +1845,14 @@ textarea:focus-visible,
 .about-stat span {
   display: block;
   margin-top: 4px;
-  color: #5a5a5a;
+  color: var(--text-soft);
   font-size: 14px;
 }
 
 .about-education {
   margin-top: 20px;
   padding: 18px 20px;
-  background: #f7f7f7;
+  background: var(--bg-muted);
 }
 
 .about-education h3 {
@@ -1828,7 +1862,7 @@ textarea:focus-visible,
 
 .about-education p {
   margin: 0;
-  color: #5a5a5a;
+  color: var(--text-soft);
 }
 
 .skill-board {
@@ -1853,8 +1887,8 @@ textarea:focus-visible,
 .skill-chips span {
   display: inline-block;
   padding: 8px 12px;
-  background: #f4f4f4;
-  color: #2b2b2b;
+  background: var(--chip-bg);
+  color: var(--chip-text);
   font-size: 14px;
   font-weight: 500;
   border-radius: 999px;
@@ -1867,7 +1901,7 @@ textarea:focus-visible,
 
 .experience .timeline-text li {
   margin-bottom: 6px;
-  color: #5a5a5a;
+  color: var(--text-soft);
   font-size: 15px;
 }
 
@@ -1885,10 +1919,10 @@ textarea:focus-visible,
 .also-shipped-list span {
   display: inline-block;
   padding: 8px 12px;
-  border: 1px solid #e5e5e5;
-  color: #333;
+  border: 1px solid var(--border);
+  color: var(--text-heading);
   font-size: 13px;
-  background: #fff;
+  background: var(--bg-elevated);
 }
 
 .portfolio-item {

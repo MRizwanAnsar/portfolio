@@ -1,7 +1,7 @@
 var portfolioData = [
   {
     title: "Formit AI",
-    role: "Lead engineer for the AI form-builder SaaS — frontend monorepo and Fastify API.",
+    role: "Lead engineer for the AI form-builder SaaS: frontend monorepo and Fastify API.",
     description:
       "Formit AI is a commercial form platform: describe the form in plain English and it builds itself, then asks the next useful question. I built prompt-to-fields generation, AI follow-ups on vague or low-score answers, six embed modes, analytics, Slack / Sheets / Zapier, and an MCP server so Cursor and Claude can edit forms. Live at formitai.com.",
     website: "https://formitai.com",
@@ -26,7 +26,7 @@ var portfolioData = [
     title: "SIMLEA",
     role: "Lead Flutter developer.",
     description:
-      "Exhibition lead-capture app for trade shows. Collect, manage, and reuse visitor data from the floor — built in Flutter for iOS and Android.",
+      "Exhibition lead-capture app for trade shows. Collect, manage, and reuse visitor data from the floor. Built in Flutter for iOS and Android.",
     stack: [
       { title: "Flutter", icon: "devicon-flutter-plain colored" },
       { title: "Dart", icon: "devicon-dart-plain colored" },
@@ -68,7 +68,7 @@ var portfolioData = [
   },
   {
     title: "Civic",
-    role: "Frontend engineer — designed and built the app from scratch.",
+    role: "Frontend engineer. Designed and built the app from scratch.",
     description:
       "Data-heavy dashboard for vendors and agencies. Search, chart views, API response caching, social login, and a Tailwind UI.",
     stack: [
@@ -181,7 +181,7 @@ var portfolioData = [
   },
   {
     title: "6Degrees",
-    role: "Backend engineer — Supabase edge functions for referral-degree scoring.",
+    role: "Backend engineer. Supabase edge functions for referral-degree scoring.",
     description:
       "Referral reward calculator. A user joins with a code; the referrer and their parent chain earn 1st- and 2nd-degree points.",
     stack: [

@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Muhammad Rizwan Ansar">
-    <meta name="theme-color" content="#070b12">
+    <meta name="theme-color" content="#09090b">
     <meta name="geo.region" content="PK-PB">
     <meta name="geo.placename" content="Lahore">
     <script>
@@ -16,7 +16,7 @@
             var theme = t === 'light' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', theme);
             var meta = document.querySelector('meta[name="theme-color"]');
-            if (meta) meta.setAttribute('content', theme === 'dark' ? '#070b12' : '#f8fafc');
+            if (meta) meta.setAttribute('content', theme === 'dark' ? '#09090b' : '#fafafa');
         })();
     </script>
 
@@ -338,7 +338,7 @@
 
             .fixed-header-laptop .site-nav-links .nav-item.nav-link:hover,
             .fixed-header-laptop .site-nav-links .nav-item.nav-link.active {
-                color: #99f6e4;
+                color: #e4e4e7;
             }
         }
     </style>
@@ -1172,7 +1172,7 @@
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
             if (themeColorMeta) {
-                themeColorMeta.setAttribute('content', next === 'dark' ? '#070b12' : '#f8fafc');
+                themeColorMeta.setAttribute('content', next === 'dark' ? '#09090b' : '#fafafa');
             }
             const label = next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
             themeToggles.forEach((btn) => btn.setAttribute('aria-label', label));

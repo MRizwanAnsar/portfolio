@@ -7,7 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Muhammad Rizwan Ansar">
-    <meta name="theme-color" content="#0f1115">
+    <meta name="theme-color" content="#070b12">
     <meta name="geo.region" content="PK-PB">
     <meta name="geo.placename" content="Lahore">
     <script>
@@ -16,14 +16,14 @@
             var theme = t === 'light' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', theme);
             var meta = document.querySelector('meta[name="theme-color"]');
-            if (meta) meta.setAttribute('content', theme === 'dark' ? '#0f1115' : '#ef233c');
+            if (meta) meta.setAttribute('content', theme === 'dark' ? '#070b12' : '#f8fafc');
         })();
     </script>
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
     <link rel="apple-touch-icon" href="img/meta-img.png">
-    <meta name="description" content="Senior Full Stack Engineer and Tech Lead in Lahore. 7+ years leading SaaS, AI, healthcare, ERP, and mobile products. 25+ production apps. Builder of Formit AI.">
+    <meta name="description" content="Senior Full Stack Engineer and Tech Lead in Lahore. 8+ years leading SaaS, AI, healthcare, ERP, and mobile products. 25+ production apps. Builder of Formit AI.">
     <meta name="keywords" content="Muhammad Rizwan Ansar, Senior Software Engineer, Tech Lead, Full Stack Engineer, Flutter developer, NestJS, Node.js, Ionic, Capacitor, React Native, Vue.js, Angular, Formit AI, Lahore, Pakistan">
     <link rel="canonical" href="https://rizwanansar.info/">
     <link rel="alternate" hreflang="en" href="https://rizwanansar.info/">
@@ -33,7 +33,7 @@
     <meta property="og:site_name" content="Muhammad Rizwan Ansar" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Muhammad Rizwan Ansar | Senior Software Engineer &amp; Tech Lead" />
-    <meta property="og:description" content="Senior Full Stack Engineer and Tech Lead. 7+ years, 25+ production products across SaaS, AI, healthcare, ERP, and mobile." />
+    <meta property="og:description" content="Senior Full Stack Engineer and Tech Lead. 8+ years, 25+ production products across SaaS, AI, healthcare, ERP, and mobile." />
     <meta property="og:image" content="https://rizwanansar.info/img/meta-img.png" />
     <meta property="og:image:alt" content="Muhammad Rizwan Ansar, senior software engineer and tech lead" />
     <meta property="og:url" content="https://rizwanansar.info/" />
@@ -45,7 +45,7 @@
     <meta name="twitter:site" content="@rizwanansar5" />
     <meta name="twitter:creator" content="@rizwanansar5" />
     <meta name="twitter:title" content="Muhammad Rizwan Ansar | Senior Software Engineer &amp; Tech Lead" />
-    <meta name="twitter:description" content="Senior Full Stack Engineer and Tech Lead. 7+ years, 25+ production products across SaaS, AI, healthcare, ERP, and mobile." />
+    <meta name="twitter:description" content="Senior Full Stack Engineer and Tech Lead. 8+ years, 25+ production products across SaaS, AI, healthcare, ERP, and mobile." />
     <meta name="twitter:image" content="https://rizwanansar.info/img/meta-img.png" />
     <script type="application/ld+json">
     {
@@ -57,9 +57,9 @@
           "name": "Muhammad Rizwan Ansar",
           "alternateName": ["M. Rizwan Ansar", "Rizwan Ansar", "MRizwanAnsar"],
           "jobTitle": "Senior Software Engineer / Tech Lead",
-          "description": "Senior Full Stack Engineer and Tech Lead with 7+ years designing and leading scalable SaaS, AI-driven, healthcare, enterprise ERP, and high-traffic mobile platforms. Led 25+ production-grade applications.",
+          "description": "Senior Full Stack Engineer and Tech Lead with 8+ years designing and leading scalable SaaS, AI-driven, healthcare, enterprise ERP, and high-traffic mobile platforms. Led 25+ production-grade applications.",
           "url": "https://rizwanansar.info/",
-          "image": "https://rizwanansar.info/img/hero.png",
+          "image": "https://rizwanansar.info/img/hero-portrait.png",
           "email": "mailto:rizwanansar5@gmail.com",
           "telephone": "+92-308-4917561",
           "address": {
@@ -113,7 +113,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -179,7 +179,7 @@
         }
 
         .theme-toggle:focus-visible {
-            outline: 2px solid #ef233c;
+            outline: 2px solid var(--color-accent);
             outline-offset: 2px;
         }
 
@@ -205,7 +205,7 @@
         }
 
         .mobile-menu-panel a:hover {
-            color: #ef233c;
+            color: var(--color-accent);
         }
 
         #menu-button {
@@ -237,13 +237,28 @@
             }
 
             nav.mobile-form {
-                background-color: var(--nav-scrolled-bg) !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                backdrop-filter: none;
+            }
+
+            nav.mobile-form.is-scrolled {
+                background: var(--nav-scrolled-bg) !important;
+                box-shadow: 0 8px 24px var(--shadow) !important;
+                backdrop-filter: blur(12px);
             }
 
             .mobile-form .theme-toggle,
             .mobile-form #menu-button,
             .mobile-form .title-header,
             .mobile-form .title-header a {
+                color: #ffffff !important;
+            }
+
+            .mobile-form.is-scrolled .theme-toggle,
+            .mobile-form.is-scrolled #menu-button,
+            .mobile-form.is-scrolled .title-header,
+            .mobile-form.is-scrolled .title-header a {
                 color: var(--nav-scrolled-text) !important;
             }
 
@@ -251,10 +266,6 @@
                 display: flex;
                 flex-direction: column;
                 width: 100%;
-            }
-
-            .hero-text {
-                margin-top: 20px;
             }
 
             .title-header {
@@ -277,10 +288,25 @@
 
         .fixed-header-laptop {
             color: white;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .site-nav-links .nav-item.nav-link {
+            color: var(--nav-scrolled-text);
+            font-weight: 500;
+            transition: color 180ms ease;
+        }
+
+        .site-nav-links .nav-item.nav-link:hover,
+        .site-nav-links .nav-item.nav-link.active {
+            color: var(--color-accent);
         }
 
         .header-floating {
             background-color: var(--nav-scrolled-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         .header-floating a {
@@ -288,7 +314,7 @@
         }
 
         .header-floating a:hover {
-            color: #ef233c;
+            color: var(--color-accent);
         }
 
         .header-floating .title-header {
@@ -304,8 +330,15 @@
         }
 
         @media (min-width: 769px) {
-            .fixed-header-laptop .title-header {
+            .fixed-header-laptop .title-header,
+            .fixed-header-laptop .title-header a,
+            .fixed-header-laptop .site-nav-links .nav-item.nav-link {
                 color: #ffffff;
+            }
+
+            .fixed-header-laptop .site-nav-links .nav-item.nav-link:hover,
+            .fixed-header-laptop .site-nav-links .nav-item.nav-link.active {
+                color: #99f6e4;
             }
         }
     </style>
@@ -319,7 +352,7 @@
             <div class="min-w-0 flex-1 text-lg sm:text-2xl md:text-4xl xl:text-4xl font-bold title-header">
                 <a href="#home" class="block truncate">M. Rizwan Ansar</a>
             </div>
-            <div class="hidden md:flex items-center space-x-4 text-white md:text-red-600">
+            <div class="hidden md:flex items-center space-x-4 site-nav-links">
                 <a href="#home" class="nav-item nav-link active ">Home</a>
                 <a href="#about" class="nav-item nav-link">About</a>
                 <a href="#service" class="nav-item nav-link">Services</a>
@@ -385,37 +418,34 @@
 
     <!-- Hero Start -->
     <main>
-    <div class="hero" id="home">
-        <div class="container-fluid">
-            <div class="row align-items-center">
-                <div class="col-sm-12 col-md-6">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <p>I'm</p>
-                            <h1>Muhammad Rizwan Ansar</h1>
-                            <h2></h2>
-                            <div class="typed-text">
-                                Senior Software Engineer, Tech Lead, Full-Stack Engineer, Flutter Developer, AI Automation Builder
-                            </div>
-                            <p class="hero-lead">Senior Full Stack Engineer and Tech Lead. 7+ years leading SaaS, AI, healthcare, ERP, and mobile products. 25+ shipped to production.</p>
-                        </div>
-                        <div class="hero-btn" id="mainPageButton">
-                            <a class="btn" href="#contact">Contact Me</a>
-                            <a class="btn" href="cv/Rizwan-SE-CV.pdf" download>Download CV</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 d-none d-md-block">
-                    <div class="hero-image">
-                        <img src="img/hero.png" class="shadow-custom" alt="Muhammad Rizwan Ansar, senior software engineer and tech lead" width="520" height="620" fetchpriority="high">
-                    </div>
+    <section class="hero" id="home" aria-label="Introduction">
+        <div class="hero-stage">
+            <div class="hero-copy">
+                <p class="hero-kicker hero-reveal">Senior Software Engineer · Tech Lead</p>
+                <h1 class="hero-brand hero-reveal">Muhammad Rizwan Ansar</h1>
+                <p class="hero-title hero-reveal">Custom AI agents, RAG systems, and full-stack products that ship.</p>
+                <p class="hero-lead hero-reveal">8+ years leading SaaS, mobile, healthcare, and AI platforms. 25+ production products from architecture through release.</p>
+                <div class="hero-btn hero-reveal" id="mainPageButton">
+                    <a class="btn btn-primary" href="#contact">Contact Me</a>
+                    <a class="btn btn-ghost" href="cv/Rizwan-SE-CV.pdf" download>Download CV</a>
                 </div>
             </div>
-            <div class="hero-image-mobile">
-                <img src="img/hero.png" alt="Muhammad Rizwan Ansar" width="180" height="180">
+            <div class="hero-portrait hero-reveal">
+                <div class="hero-portrait-glow" aria-hidden="true"></div>
+                <picture>
+                    <source srcset="img/hero-portrait.webp" type="image/webp">
+                    <img
+                        src="img/hero-portrait.png"
+                        alt="Muhammad Rizwan Ansar, senior software engineer and tech lead"
+                        width="1103"
+                        height="1200"
+                        fetchpriority="high"
+                        decoding="async"
+                    >
+                </picture>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Hero End -->
 
 
@@ -426,30 +456,38 @@
                 <p>About</p>
                 <h2>About me</h2>
             </div>
-            <div class="about-text wow fadeInUp" data-wow-delay="0.2s">
-                <p>
-                    Senior Full Stack Engineer with 7+ years designing and leading scalable SaaS, AI-driven, healthcare, enterprise ERP, and high-traffic mobile platforms. I own multi-tenant architectures, RBAC, microservices, and large-scale data processing, from scope through deploy.
-                </p>
-                <p>
-                    I have led 25+ production-grade applications across healthcare, gov-tech, real estate, printing infrastructure, and IoT. The current product I am shipping is <a href="https://formitai.com" target="_blank" rel="noopener noreferrer">Formit AI</a>, an AI form platform.
-                </p>
-                <div class="about-stats" aria-label="Career snapshot">
-                    <div class="about-stat">
-                        <strong>7+</strong>
-                        <span>Years building production software</span>
+            <div class="about-layout wow fadeInUp" data-wow-delay="0.2s">
+                <figure class="about-portrait">
+                    <picture>
+                        <source srcset="img/hero-portrait.webp" type="image/webp">
+                        <img src="img/hero-portrait.png" alt="Muhammad Rizwan Ansar, senior software engineer and tech lead" width="440" height="480" loading="lazy" decoding="async">
+                    </picture>
+                </figure>
+                <div class="about-text">
+                    <p>
+                        Senior Full Stack Engineer with 8+ years designing and leading scalable SaaS, AI-driven, healthcare, enterprise ERP, and high-traffic mobile platforms. I own multi-tenant architectures, RBAC, microservices, and large-scale data processing, from scope through deploy.
+                    </p>
+                    <p>
+                        I have led 25+ production-grade applications across healthcare, gov-tech, real estate, printing infrastructure, and IoT. The current product I am shipping is <a href="https://formitai.com" target="_blank" rel="noopener noreferrer">Formit AI</a>, an AI form platform.
+                    </p>
+                    <div class="about-stats" aria-label="Career snapshot">
+                        <div class="about-stat">
+                            <strong>8+</strong>
+                            <span>Years building production software</span>
+                        </div>
+                        <div class="about-stat">
+                            <strong>25+</strong>
+                            <span>Production-grade applications</span>
+                        </div>
+                        <div class="about-stat">
+                            <strong>3.8</strong>
+                            <span>CGPA, Gold Medalist, Software Engineering</span>
+                        </div>
                     </div>
-                    <div class="about-stat">
-                        <strong>25+</strong>
-                        <span>Production-grade applications</span>
+                    <div class="about-education">
+                        <h3>Education</h3>
+                        <p>B.S. Software Engineering, Superior University Lahore, 2014-2018. CGPA 3.8, Gold Medalist.</p>
                     </div>
-                    <div class="about-stat">
-                        <strong>3.8</strong>
-                        <span>CGPA, Gold Medalist, Software Engineering</span>
-                    </div>
-                </div>
-                <div class="about-education">
-                    <h3>Education</h3>
-                    <p>B.S. Software Engineering, Superior University Lahore, 2014-2018. CGPA 3.8, Gold Medalist.</p>
                 </div>
             </div>
         </div>
@@ -1134,7 +1172,7 @@
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
             if (themeColorMeta) {
-                themeColorMeta.setAttribute('content', next === 'dark' ? '#0f1115' : '#ef233c');
+                themeColorMeta.setAttribute('content', next === 'dark' ? '#070b12' : '#f8fafc');
             }
             const label = next === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
             themeToggles.forEach((btn) => btn.setAttribute('aria-label', label));
@@ -1161,16 +1199,16 @@
         });
 
         function syncHeaderScrollState() {
+            const scrolled = $(window).scrollTop() > 8;
             if (window.innerWidth > 768) {
-                if ($(window).scrollTop() > 0) {
-                    $(".mobile-form").addClass("header-floating");
-                    $(".mobile-form").removeClass("fixed-header-laptop");
+                if (scrolled) {
+                    $(".mobile-form").addClass("header-floating").removeClass("fixed-header-laptop is-scrolled");
                 } else {
-                    $(".mobile-form").removeClass("header-floating");
-                    $(".mobile-form").addClass("fixed-header-laptop");
+                    $(".mobile-form").removeClass("header-floating is-scrolled").addClass("fixed-header-laptop");
                 }
             } else {
                 $(".mobile-form").removeClass("header-floating fixed-header-laptop");
+                $(".mobile-form").toggleClass("is-scrolled", scrolled);
             }
         }
 

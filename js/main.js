@@ -56,7 +56,7 @@
     }
   });
 
-  // Typed Initiate
+  // Typed Initiate (legacy hero only)
   if ($(".hero .hero-text h2").length == 1) {
     var typed_strings = $(".hero .hero-text .typed-text").text();
     var typed = new Typed(".hero .hero-text h2", {

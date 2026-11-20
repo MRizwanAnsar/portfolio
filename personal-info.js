@@ -1,7 +1,7 @@
 var personalInfo = {
   name: "Muhammad Rizwan Ansar",
-  jobTitle: "Senior Software Engineer / Tech Lead",
-  address: "Nashat Colony, Lahore Cantt, Pakistan",
+  jobTitle: "Principal Engineer / Tech Lead",
+  address: "Lahore, Pakistan",
   phone: "+92 308 4917561",
   phoneHref: "tel:+923084917561",
   email: "rizwanansar5@gmail.com",
@@ -10,5 +10,6 @@ var personalInfo = {
   website: "https://rizwanansar.info",
   twitter: "https://x.com/rizwanansar5",
   wellfound: "https://wellfound.com/u/muhammad-rizwan-ansar",
-  resume: "cv/Rizwan-SE-CV.pdf",
+  resume: "cv/Muhammad-Rizwan-Ansar-CV.pdf",
+  upwork: "https://www.upwork.com/freelancers/~0164433945121c5361",
 };

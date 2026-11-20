@@ -2145,3 +2145,317 @@ textarea:focus-visible,
     scroll-behavior: auto !important;
   }
 }
+
+/*******************************/
+/****** 2026-11 refresh ********/
+/*******************************/
+
+/* Theme-safe colors: elements on the accent fill use the on-accent token,
+   so they stay readable in both light and dark themes. */
+.portfolio #portfolio-filter li {
+  color: var(--color-on-accent);
+  border-radius: 999px;
+  padding: 10px 20px;
+}
+
+.portfolio #portfolio-filter li:hover,
+.portfolio #portfolio-filter li.filter-active {
+  color: var(--color-accent);
+}
+
+.back-to-top,
+.back-to-top:hover {
+  border-radius: 999px;
+  padding: 0;
+  line-height: 44px;
+  font-size: 18px;
+}
+
+.back-to-top i,
+.back-to-top:hover i {
+  color: var(--color-on-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.portfolio-item:focus-visible,
+#portfolio-filter li:focus-visible {
+  outline: 3px solid var(--color-ring);
+  outline-offset: 3px;
+}
+
+/* Hero additions */
+.hero .hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 18px;
+  padding: 6px 14px 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e4e4e7;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hero .hero-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+  flex-shrink: 0;
+}
+
+.hero .hero-now {
+  margin: 22px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #a1a1aa;
+}
+
+.hero .hero-now strong {
+  color: #fafafa;
+  font-weight: 600;
+}
+
+.hero .hero-now a {
+  color: #fafafa;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Nav CV button */
+.site-nav-links .nav-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.fixed-header-laptop .site-nav-links .nav-cv {
+  color: #ffffff;
+}
+
+.header-floating .site-nav-links .nav-cv {
+  color: var(--nav-scrolled-text);
+}
+
+.site-nav-links .nav-cv:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* About stats: 4 tiles */
+.about-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 991.98px) {
+  .about-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Experience: job titles are h3 now (correct heading order) */
+.experience .timeline .timeline-text h3 {
+  margin: 0 0 5px 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.experience .timeline .timeline-text .timeline-company {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-heading);
+}
+
+.experience .timeline-text .timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.experience .timeline-text .timeline-tags span {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Project cards: visible affordance */
+.portfolio .portfolio-text h3 {
+  color: var(--text-heading);
+}
+
+.portfolio .portfolio-text .portfolio-cta {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+.portfolio .portfolio-text .portfolio-heading {
+  width: calc(100% - 70px);
+  margin: 0 0 0 15px;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-text .portfolio-heading h3 {
+  width: 100%;
+  margin: 0;
+  text-overflow: ellipsis;
+}
+
+.portfolio .portfolio-text {
+  height: 68px;
+}
+
+/* Contact: section is always dark, so its button uses a fixed light fill */
+.contact-section .btn,
+.contact-section .btn:hover {
+  color: #09090b;
+  background: #fafafa;
+  border-color: #fafafa;
+}
+
+.contact-section .btn:hover {
+  background: #e4e4e7;
+}
+
+.contact-section a:hover {
+  color: #d4d4d8;
+}
+
+/* Footer: token-based, readable in both themes */
+.site-footer {
+  margin-top: 0;
+  padding: 56px 16px 28px;
+  background: var(--bg-muted);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.site-footer .footer-name {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.site-footer .footer-role {
+  margin: 0 0 4px;
+  color: var(--text-soft);
+}
+
+.site-footer .footer-location {
+  margin: 0 0 18px;
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+.site-footer .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.site-footer .footer-links a:hover {
+  color: var(--text-soft);
+}
+
+.site-footer .footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+}
+
+.site-footer .footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--text-heading);
+}
+
+.site-footer .footer-social a:hover {
+  color: var(--text-soft);
+}
+
+.site-footer .footer-copy {
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.site-footer .footer-copy a {
+  color: var(--text-soft);
+  text-decoration: underline;
+}
+
+html[data-theme="light"] .site-footer .upwork-word {
+  fill: #09090b;
+}
+
+/* Reduced motion: show WOW.js content in its final state */
+@media (prefers-reduced-motion: reduce) {
+  .wow {
+    visibility: visible !important;
+    animation: none !important;
+  }
+}
+
+.contact-meta a {
+  min-height: 44px;
+}
+
+@media (max-width: 767.98px) {
+  .site-footer {
+    padding-bottom: 80px;
+  }
+}
+
+/* Skill chips with logos: single-colour, follows the theme */
+.skill-chips span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-chips span i {
+  font-size: 16px;
+  line-height: 1;
+  color: currentColor;
+  opacity: 0.9;
+}

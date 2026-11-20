@@ -1,9 +1,9 @@
 var portfolioData = [
   {
-    title: "Formit AI",
+    title: "FormitAI",
     role: "Lead engineer for the AI form-builder SaaS: frontend monorepo and Fastify API.",
     description:
-      "Formit AI is a commercial form platform: describe the form in plain English and it builds itself, then asks the next useful question. I built prompt-to-fields generation, AI follow-ups on vague or low-score answers, six embed modes, analytics, Slack / Sheets / Zapier, and an MCP server so Cursor and Claude can edit forms. Live at formitai.com.",
+      "FormitAI is a commercial form platform: describe the form in plain English and it builds itself, then asks the next useful question. I built prompt-to-fields generation, AI follow-ups on vague or low-score answers, six embed modes, analytics, Slack / Sheets / Zapier, and an MCP server so Cursor and Claude can edit forms. Live at formitai.com.",
     website: "https://formitai.com",
     stack: [
       { title: "Next.js", icon: "devicon-nextjs-original-wordmark" },

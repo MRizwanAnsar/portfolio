@@ -10,6 +10,11 @@
       ],
       "destination": "https://rizwanansar.info/:path*",
       "permanent": true
+    },
+    {
+      "source": "/cv/Rizwan-SE-CV.pdf",
+      "destination": "/cv/Muhammad-Rizwan-Ansar-CV.pdf",
+      "permanent": false
     }
   ]
 }

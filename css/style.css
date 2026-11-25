@@ -1006,7 +1006,7 @@ a:focus {
 
 .service .service-item:hover .service-text h3,
 .service .service-item:hover .service-text p {
-  color: #ffffff;
+  color: var(--color-on-accent);
 }
 
 @media (max-width: 575.98px) {
